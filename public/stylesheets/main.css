@@ -270,3 +270,12 @@ textarea {
         page-break-after: avoid;
     }
 }
+
+    #today {
+    float:left;
+    width:300px;
+    }
+    #tomorrow {
+    float:left;
+    width:300px;
+   }
