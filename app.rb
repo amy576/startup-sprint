@@ -1,8 +1,10 @@
 require_relative 'config/environment'
+require 'json'
 
 class App < Sinatra::Base
   get '/' do
     @error = params['error']
+    @full_name = params[:full_name]
     erb :home
   end
   
@@ -16,17 +18,14 @@ class App < Sinatra::Base
     @city = params[:city]
 
     if !@email.match(/.+@.+/)
-      redirect to('/?error=email')
+      redirect to('/?error=email&full_name='+@full_name)
     end
 
     erb :subscribe
   end
 
   get '/reddit' do
-    # TODO: we can probably get the listings with something like:
-    # JSON.parse(RestClient.get('http://reddit.com/.json'))
-
-    @listings = []
+    @listings = JSON.parse(RestClient.get('http://reddit.com/.json'))
 
     erb :reddit
   end

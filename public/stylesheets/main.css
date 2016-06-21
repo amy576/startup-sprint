@@ -273,15 +273,15 @@ textarea {
 
     #today {
     float:left;
-    width:300px;
+    width:30%;
     }
     #tomorrow {
     float:left;
-    width:300px;
+    width:30%;
    }
    
    
-div {
+.rainbow {
   border: 30px solid #000; /* this is short hand for setting
                             the border's width, its type, and color */
   display: inline-block; /* a way of positioning elements */
