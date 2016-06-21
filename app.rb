@@ -5,6 +5,10 @@ class App < Sinatra::Base
     @error = params['error']
     erb :home
   end
+  
+  get '/home' do
+    redirect to('/')
+  end
 
   post '/subscribe' do
     @full_name = params[:full_name]
@@ -29,6 +33,10 @@ class App < Sinatra::Base
 
   get '/rainbow' do
     erb :rainbow
+  end
+  
+  get '/youtube' do
+    erb :youtube
   end
   
   get '/schedule' do
